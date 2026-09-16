@@ -37,5 +37,35 @@ Le système $\Sigma^*$ est donc un système fermé, et on peut appliquer les pri
 
 ## Exercice 2
 1. **Rappel du premier principe pour un fluide en écoulement stationnaire :**
-   $$(dh+de_c+de_p)D = \delta P_u + \delta P_{th}$$
-2. 
+   $$\begin{align*}
+   d(H+E_c+E_p) &= \delta W + \delta Q \\
+   \implies (dh+de_c+de_p) &= \delta w + \delta q \\
+   \implies D \times (dh+de_c+de_p) &= D \times (\delta w + \delta q) \\
+   \implies D(dh+de_c+de_p) &= \frac{dm}{dt}\delta w_u + \frac{dm}{dt}\delta q \\
+   \implies (dh+de_c+de_p)D &= P_u + P_{th}
+   \end{align*}$$
+**Rappel de l'expression du deuxième principe pour un fluide en écoulement stationnaire :**
+$$\begin{align*}
+dm\cdot ds &= \delta S_{éch} + \delta S_{cré} \\
+\implies dm\cdot ds &= \frac{\delta Q}{T_0} + \delta S_{cré} \\
+\text{Or on sait que : } \delta Q &= P_{th} dt \\
+\implies dm\cdot ds &= \frac{P_{th} dt}{T_0} + \delta S_{cré} \\
+\implies \frac{dm}{dt} ds &= \frac{P_{th}}{T_0} + \frac{\delta S_{cré}}{dt} \\
+\implies D(s_2-s_1) &= \frac{P_th}{T_0} + \dot\sigma
+\end{align*}$$
+
+$\dot\sigma$ représente le taux de création d'entropie, soit $\frac{dS_{cré}}{dt}$, aussi noté $\sigma^{cre}$.
+
+2. **Commentaires sur les échanges entre le gaz et l'extérieur :**
+
+On remarque que $T_1 > T_0$ et $T_2 > T_0$ donc le gaz cède de la chaleur à l'extérieur.
+
+(Énoncé) Les variations d'énergie cinétique étant négligées et les variations d'énergie potentielle étant nulles (turbine horizontale), on a donc $de_c \approx 0$ et $de_p = 0$.
+
+Le premier principe devient donc :
+$$D(h_2-h_1) = P_u + P_{th}$$
+
+D'après le deuxième principe, on a :
+$$\dot\sigma \ge 0$$
+Ce qui implique que :
+$$D(s_2-s_1) \ge \frac{P_{th}}{T_0}$$
