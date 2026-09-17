@@ -131,6 +131,195 @@ PV^\gamma = \text{cte} &\implies P\cdot \frac{T^\gamma(MR)^\gamma}{P^\gamma} = \
 &\implies T_2 = T_0 \left(\frac{P_2}{P_0}\right)^{\frac{\gamma-1}{\gamma}} = T_0 \beta^{\frac{\gamma-1}{\gamma}}
 \end{align*}$$
 
-1. **Expression du travail reçu par le fluide :**
+2. **Expression du travail reçu par le fluide :**
 
-D'après le premier principe, on a :
+...
+
+5. **Calcul de $T_1$ et $T_2'$ dans le cas du compresseur optimisé et comparaison avec la temperature $T_2$ obtenue précédemment :**
+
+Dans les étages BP et HP, les transformations sont adibatiques, alors on a :
+$$\begin{cases}
+T_1 = T_0 \cdot \beta_1^{\frac{\gamma-1}{\gamma}} \text{ (Q1)}\\
+T_2' = T_0 \cdot \beta_2^{\frac{\gamma-1}{\gamma}}
+\end{cases}$$
+
+Après application numérique, on trouve que : $T_1 \approx 432,4 \text{ K}$ et $T_2' \approx 432,4 \text{ K}$. ($\beta_1$ et $\beta_2$ sont égales, alors (...))
+
+**Comparaison avec la température du compresseur monoétagé :** $T_2 = T_0\left(\frac{P_2}{P_0}\right)^{\frac{\gamma-1}{\gamma}} \approx 625 \text{ K}$
+
+On constate que $T_2' < T_2$. L'utilité du compresseur étagé est de réduire la température de sortie du compresseur. Cela permet d'éviter d'endommager les pièces du compresseur.
+
+6. **Calcul du travail indiqué par le compresseur étagé optimisé et comparaison au travail dépensé par le compresseur monoétagé :**
+
+Le nouveau travail dépensé est donné par :
+$$W' = \frac{2\gamma r}{\gamma - 1}\left((5)^{\frac{\gamma-1}{\gamma}}-1\right) \approx 318 \text{ J}$$
+
+Le travail dépensé par le compresseur monoétagé est donné par :
+$$W = C_pT_0((2r^{\frac{\gamma-1}{\gamma}})-1) \approx 411 \text{ J}$$
+
+On remarque encore une fois que $W' < W$. L'utilité du compresseur étagé est de réduire le travail dépensé par le compresseur. On gagne $93$ Joules, soit une réduction de $22,6\%$ du travail dépensé.
+
+## Exercice 4
+
+![alt text](img/assetcorrtd1.png)
+
+*La transformation 3-4 est une transformation isenthalpique, et plus précisément une détente de Joule-Thomson. Le travail de transvasement $\Delta (PV)$ compense la variation d'énergie interne, et donc $\Delta H =0$.*
+<!-- à revoir parce que je suis con 😍😍😍 -->
+
+2. Le cycle est parcouru dans le sens horaire.
+
+3. $q_f = \Delta h_{4 \to 1} = h_1 - h_4$ et $w_{comp} = h_2 - h_1$.
+
+Après application numérique, on trouve que :
+$$\begin{cases}
+q_f \approx 90 \text{ kJ/kg} \\
+w_{comp} \approx 40 \text{ kJ/kg}
+\end{cases}$$
+
+4. **Calcul de l'efficacité et commentaires sur une amélioration possible :**
+L'efficacité est donnée par :
+$$e = \frac{q_f}{w_{comp}} \approx 2,25$$
+
+Pour améliorer l'efficacité, on peut augmenter la durée de la transformation $2 \to 3$ pour que $q_f$ augmente.
+
+## Exercice 5
+
+1. **Définition de l'énergie totale d'un système thermodynamique :**
+
+L'énergie totale d'un système thermodynamique est la somme de l'énergie interne, de l'énergie cinétique et de l'énergie potentielle :
+$$E = E_t + E_p + U$$
+
+2. **Premier principe de la thermodynamique pour un système fermé :**
+$$\Delta E_t = \delta W + \delta Q$$
+
+3. 1. **Démonstration à partir du bilan de masse de la formule souhaitée :**
+
+On pose $m(S(t)) = dm_1 + m_v$. À l'instant $t+dt$, on a $m(S(t+dt)) = dm_2 + m_v$. Le système est en régime permanent, donc $m(S(t)) = m(S(t+dt))$.
+
+On a donc $dm_1 = dm_2 = \delta m$. Ce qui implique que $\rho_1\Sigma_1 w_1dt = \rho_2\Sigma_2 w_2dt$. CQFD.
+
+3. 2. **Établissement de la relation demandée :**
+
+À l'instant $t$, on a :
+$$E(t) = E(v)+E(dm_1)$$
+$$\begin{align*}
+\text{Avec : } E(dm_1) &= E_c(dm_1)+E_p(dm_1)+U(dm_1) \\
+&= \frac12 dm_1 w_1^2 + dm_1 g z_1 + U(dm_1) \\
+&= dm_1\left(\frac12 w_1^2 + g z_1 + u_1\right)
+\end{align*}$$
+
+À l'instant $t+dt$, on a :
+$$E(t+dt) = E(v)+E(dm_2)$$
+$$\begin{align*}
+\text{Avec : } E(dm_2) &= E_c(dm_2)+E_p(dm_2)+U(dm_2) \\
+&= \frac12 dm_2 w_2^2 + dm_2 g z_2 + U(dm_2) \\
+&= dm_2\left(\frac12 w_2^2 + g z_2 + u_2\right)
+\end{align*}$$
+
+D'après le premier principe de la thermodynamique, on a :
+$$E(t+dt) - E(t) = \delta W + \delta Q$$
+$$\implies E(dm_2) - E(dm_1) = \delta W + \delta W' + \delta Q$$
+$$\implies dm_2\left(\frac12 w_2^2 + g z_2 + u_2\right) - dm_1\left(\frac12 w_1^2 + g z_1 + u_1\right) = \delta W + \delta W' + \delta Q$$
+
+Calculons $\delta W'$ :
+$$\delta W' = P_1\delta V_1 - P_2\delta V_2 = dt(P_1\Sigma_1 w_1-P_2\Sigma_2 w_2)$$
+
+On trouve donc :
+$$\delta m\left[\frac12 w^2 + gz_2 + u_2 + P_2\Sigma_2 w_2 - \left(\frac12 w_1^2 + gz_1 + u_1 + P_1\Sigma_1 w_1\right)\right] = \delta W + \delta Q$$
+On simplifie $u_i + P_i\Sigma_i w_i = h_i$ sachant que $P_i\Sigma_i w_i = P_i v_i = Pv = \frac{P}{\rho} = \frac{P}{\frac{PM}{RT}} = \frac{RT}{M}$.
+
+On trouve enfin :
+$$\delta m\left[\left(\frac12 w_2^2 + gz_2 + h_2\right) - \left(\frac12 w_1^2 + gz_1 + h_1\right)\right] = \delta W + \delta Q$$
+
+3. 3. **Définition des conditions expérimentales qui permettent de faire subir au fluide une détente de Joule Thomson (isenthalpique) :**
+
+- $\delta Q = 0$ (adiabatique)
+- $\delta W = 0$ (pas de machine dans l'écoulement)
+- $W_1 \approx W_2 \approx 0$ (écoulement lent)
+- $z_1 = z_2$ (écoulement horizontal)
+
+Dans ces conditions, on a bien $h_1 = h_2$.
+
+## Exercice 6
+
+1. **Relation que vérifient $M$,$w_1$,$w(x)$,$H_1$,$H(x)$ :**
+
+* L'écoulement est horizontal, donc $\Delta z = 0$.
+* L'écoulement est adiabatique donc $\delta Q = 0$.
+* Il n'y a pas de travail utile donc $\delta W = 0$.
+* L'écoulement est stationnaire donc $\frac{dm}{dt} = D = \text{cte}$.
+
+On trouve donc $\delta m \left(\frac12 w^2 + h(x)\right) = \delta m \left(\frac12 w_1^2 + h_1\right)$.
+
+D'où :
+$$\left(\frac12 w^2 + h(x)\right) - \left(\frac12 w_1^2 + h_1\right) = 0$$
+
+Et on a $h = \frac HM$. Donc : $\frac12 w^2(x) + \frac{H(x)}{M} - \left(\frac12 w_1^2 + \frac{H_1}{M}\right) = 0$.
+
+D'où :
+$$\boxed{\frac M2\left(w^2(x) - w_1^2\right) + H(x) - H_1 = 0}$$
+
+2. **Démonstration de la relation souhaitée :**
+La détente est adiabatique réversible. La variation d'entropie est donc nulle ; $\Delta S = 0$.
+
+En utilisant la deuxième identité thermodynamique :
+$$dH = TdS + VdP$$
+$$\implies dH = V\cdot dP$$
+On sait que $M = \rho V$.
+$$\implies dH = \frac{M}{\rho(x)}dP$$
+$$\implies H(x) - H_1 = \int_{P_1}^{P(x)} \frac{M}{\rho} dP$$
+
+On trouve donc la relation souhaitée :
+$$\boxed{\frac12 w^2(x) -\frac12 w_1^2 + \int_{P_1}^{P(x)} \frac{dP}{\rho} = 0}$$
+
+3. 1. **Expression de $w^2(x)$ en fonction de $w_1$,$C_p$,$T_1$,$M$,$\gamma$ et $\varepsilon$ :**
+
+La transformation est adiabatique, réversible et le gaz est parfait. On peut donc utiliser les lois de Laplace :
+$$\begin{align*}
+PV^\gamma &= \text{cte} \\
+\implies P\cdot\rho^{-\gamma} &= \text{cte} \\
+\implies P_1\cdot\rho_1^{-\gamma} &= P(x)\cdot\rho(x)^{-\gamma} \\
+\implies \rho(x) &= \rho_1\left(\frac{P(x)}{P_1}\right)^{\frac{1}{\gamma}}
+\end{align*}$$
+
+En posant $\varepsilon = \frac{P(x)}{P_1}$, on a donc $\rho(x) = \rho_1\varepsilon^{\frac{1}{\gamma}}$.
+
+En réinsérant dans la relation précédente, on trouve :
+$$\frac12 w^2(x) - \frac12 w_1^2 + \int_{P_1}^{P(x)} \frac{dP}{\rho_1\varepsilon^{\frac{1}{\gamma}}} = 0$$
+$$\implies \frac12 w^2(x) - \frac12 w_1^2 + \frac{1}{\rho_1}\int_{P_1}^{P(x)} \varepsilon^{-\frac{1}{\gamma}} dP = 0$$
+Et on a aussi :
+$$\int_{P_1}^{P(x)} \frac{dP}{\rho(x)} = \frac{P_1\gamma}{\rho_1(\gamma-1)}\left(\varepsilon^{\frac{\gamma-1}{\gamma}}-1\right) = \frac{C_pT_1}{M}\left(\varepsilon^{\frac{\gamma-1}{\gamma}}-1\right)$$
+On trouve donc :
+$$\boxed{w^2(x) = w_1^2 - \frac{2C_pT_1}{M}(1-\varepsilon^{\frac{\gamma - 1}{\gamma}})}$$
+
+3. 2. **Débit massique $q_m$ du gaz à l'abscisse $x$ en fonction de $\rho_1, \varepsilon, \gamma, \Sigma(x)$ et $w(x)$ :**
+
+On sait que $q_m = \rho(x) \Sigma(x) w(x)$ et $\rho(x) = \rho_1\varepsilon^{\frac{1}{\gamma}}$ et que $w(x) = \sqrt{\frac{2C_pT_1}{M}(1-\varepsilon^{\frac{\gamma - 1}{\gamma}})}$.
+
+On trouve donc :
+$$\boxed{q_m = \rho_1\varepsilon^{\frac{1}{\gamma}}\Sigma(x)\sqrt{\frac{2C_pT_1}{M}(1-\varepsilon^{\frac{\gamma - 1}{\gamma}})}}$$
+
+On pose $\rho_1\sqrt{\frac{2C_pT_1}{M}} = k_1$ et $\varepsilon^{\frac{1}{\gamma}}\sqrt{1-\varepsilon^{\frac{\gamma - 1}{\gamma}}} = f(\varepsilon)$ pour la suite.
+
+3. 3. 1. **Preuve de l'écriture du débit massique avec explicitation de $k_1$ et $f(\epsilon)$ :**
+
+On a $f(\varepsilon) = \varepsilon^{\frac{1}{\gamma}}\sqrt{1-\varepsilon^{\frac{\gamma - 1}{\gamma}}}$.
+
+On dérive pour trouver le maximum de $f(\varepsilon)$ :
+$$f'(\varepsilon) = \dots$$
+Après calculs, on trouve que $\varepsilon_0 = \left(\frac{\gamma+1}{2}\right)^{\frac{\gamma}{1-\gamma}}$ est le maximum de $f(\varepsilon)$.
+
+En étudiant les limites, on trouve que $\lim_{\varepsilon \to 0} f(\varepsilon) = 0$ et $\lim_{\varepsilon \to +\infty} f(\varepsilon) = 0$, ce qui confirme que $\varepsilon_0$ est bien le maximum de $f(\varepsilon)$ *(oui fallait le dire avant...)*
+
+3. 3. 2. 1. **Si $\frac{P_2}{P_1} > \varepsilon_0$, alors la tuyère est convergente**$
+
+[...]
+
+3. 3. 2. 2. **Si $\frac{P_2}{P_1} < \varepsilon_0$, alors la tuyère est convergente-divergente**$
+
+[...]
+
+3. 3. 3. : Applications numériques. $w_0 = 818~\mathrm m\cdot \mathrm s^{-1}$ et $P_0 = 10,6~\text{bar}$.
+
+## Exercice 7
+
