@@ -319,7 +319,9 @@ En étudiant les limites, on trouve que $\lim_{\varepsilon \to 0} f(\varepsilon)
 
 [...]
 
-3. 3. 3. : Applications numériques. $w_0 = 818~\mathrm m\cdot \mathrm s^{-1}$ et $P_0 = 10,6~\text{bar}$.
+3. 3. 3. **Applications numériques.** $w_0 = 818~\mathrm m\cdot \mathrm s^{-1}$ et $P_0 = 10,6~\text{bar}$.
 
 ## Exercice 7
 
+1. Cf. exercice précédent. On trouve $h_s - h_e = h_3 - h_2 = w + q$.
+2. On utilise $h_3-h_2 = w+q = c_p(T_3-T_2)$.
