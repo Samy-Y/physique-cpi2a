@@ -324,4 +324,5 @@ En étudiant les limites, on trouve que $\lim_{\varepsilon \to 0} f(\varepsilon)
 ## Exercice 7
 
 1. Cf. exercice précédent. On trouve $h_s - h_e = h_3 - h_2 = w + q$.
-2. On utilise $h_3-h_2 = w+q = c_p(T_3-T_2)$.
+2. On utilise $h_3-h_2 = w+q = c_p(T_3-T_2)$. Elle est adiabatique donc $q = 0$. On trouve $W = \frac{\gamma R}{(\gamma -1)M}T_2\left(\left(\frac{P_1}{P_2}\right)^{\frac{\gamma-1}{\gamma}}-1\right) \approx 2277 \text{ J}$.
+3. $dh = TdS + VdP$
